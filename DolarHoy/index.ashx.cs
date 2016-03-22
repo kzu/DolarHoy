@@ -20,8 +20,8 @@ namespace DolaryHoy
 			string compra = data.CasaCambioCompraValue;
 			string venta = data.CasaCambioVentaValue;
 
-			if (context.Request.AcceptTypes.Any(s => s == "application/json") || 
-				context.Request.QueryString.AllKeys.Contains("json") ||
+			if (context.Request.AcceptTypes.Any (s => s == "application/json") ||
+				context.Request.QueryString.AllKeys.Contains ("json") ||
 				(context.Request.QueryString.Count != 0 && context.Request.QueryString.GetValues (0).Any (s => s == "json"))) {
 				dynamic result = new JObject();
 				result.compra = compra;
@@ -30,7 +30,22 @@ namespace DolaryHoy
 				context.Response.ContentType = "application/json";
 				context.Response.AddHeader ("Access-Control-Allow-Origin", "*");
 				((JObject)result).WriteTo (new JsonTextWriter (context.Response.Output) { Formatting = Formatting.Indented });
+			} else if (context.Request.QueryString.AllKeys.Contains ("compra") ||
+				  (context.Request.QueryString.Count != 0 && context.Request.QueryString.GetValues (0).Any (s => s == "compra"))) {
+
+				context.Response.ContentType = "text/plain";
+				context.Response.AddHeader ("Access-Control-Allow-Origin", "*");
+				context.Response.Write (compra);
+			} else if (context.Request.QueryString.AllKeys.Contains ("venta") ||
+				  (context.Request.QueryString.Count != 0 && context.Request.QueryString.GetValues (0).Any (s => s == "venta"))) {
+
+				context.Response.ContentType = "text/plain";
+				context.Response.AddHeader ("Access-Control-Allow-Origin", "*");
+				context.Response.Write (venta);
 			} else {
+				context.Response.ContentType = "text/plain";
+				context.Response.AddHeader ("Access-Control-Allow-Origin", "*");
+
 				var addDate = context.Request.QueryString.AllKeys.Contains("date") ||
 					(context.Request.QueryString.Count != 0 && context.Request.QueryString.GetValues (0).Any (s => s == "date"));
 
