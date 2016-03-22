@@ -1,0 +1,29 @@
+{
+  "siteName": {
+    "value": "dolarhoy"
+  },
+  "hostingPlanName": {
+    "value": "Default1"
+  },
+  "siteLocation": {
+    "value": "East US"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "siteMode": {
+    "value": "Limited"
+  },
+  "computeMode": {
+    "value": "0"
+  },
+  "subscriptionId": {
+    "value": "c1348541-b059-4c20-bab3-c40c2bd06851"
+  },
+  "resourceGroup": {
+    "value": "Default-Web-EastUS"
+  }
+}
