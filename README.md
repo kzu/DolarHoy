@@ -1,6 +1,6 @@
 # DolarHoy
 
-Una forma conveniente de chequear el valor del dolar hoy
+Una forma conveniente de chequear el valor del dólar hoy
 
 Uso:
 
@@ -8,3 +8,6 @@ Uso:
 * [http://dolarhoy.azurewebsites.net/?json](http://dolarhoy.azurewebsites.net/?json): devuelve valor de compra y venta como json
 
 Este servicio combinado con Azure Logic Apps genera los tweets de [@dolarhoybot](http://twitter.com/dolarhoybot).
+
+La información sale del sitio de [La Nacion - Dolar Hoy](http://www.lanacion.com.ar/dolar-hoy-t1369) en el momento 
+en que se pide la página.
